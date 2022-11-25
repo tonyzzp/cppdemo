@@ -15,11 +15,11 @@ int main()
 {
     SetConsoleOutputUtf8();
 
-    printf("sizeof(char): %d\n", sizeof(char));
+    printf("sizeof(char): %ld\n", sizeof(char));
 
     Person p;
     memcpy(p.name, "zzp", 4);
-    strcpy_s(p.city, "襄樊");
+    strcpy(p.city, "襄樊");
     p.age = 18;
     printf("name: %s, age: %d, city: %s\n", p.name, p.age, p.city);
 
@@ -33,7 +33,7 @@ int main()
     for (size_t i = 0; i < 5; i++)
     {
         Person p = ps[i];
-        printf("%d: sizeof(p)=%d, age=%d\n", i, sizeof(p), p.age);
+        printf("%ld: sizeof(p)=%ld, age=%d\n", i, sizeof(p), p.age);
     }
 
     return 0;

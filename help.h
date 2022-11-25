@@ -10,3 +10,10 @@ extern "C" void SetConsoleOutputUtf8()
     SetConsoleOutputCP(65001);
 #endif
 }
+
+extern "C" void SetConsoleOutputDefault()
+{
+#ifdef _WIN32
+    SetConsoleOutputCP(936);
+#endif
+}

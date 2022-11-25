@@ -7,10 +7,10 @@ int main()
     printf("hello demo_time\n");
 
     time_t now = time(0);
-    printf("time() = %d\n", now);
+    printf("time() = %ld\n", now);
 
     time_t c = clock();
-    printf("clock() = %d\n", c);
+    printf("clock() = %ld\n", c);
 
     tm *l_time = localtime(&now);
     printf("localtime() = %04d-%02d-%02d %02d:%02d:%02d\n", l_time->tm_year + 1900, l_time->tm_mon + 1, l_time->tm_mday, l_time->tm_hour, l_time->tm_min, l_time->tm_sec);
@@ -27,7 +27,7 @@ int main()
         t.tm_min = 0;
         t.tm_sec = 0;
         time_t v = mktime(&t);
-        printf("mktime(2022-11-25) = %d, wday=%d\n", v, t.tm_wday);
+        printf("mktime(2022-11-25) = %ld, wday=%d\n", v, t.tm_wday);
     }
 
     {
