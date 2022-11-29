@@ -11,13 +11,22 @@ private:
     char *chars;
 
 public:
+    static int count;
+    static void printCount()
+    {
+        printf("Creature.count: %d\n", count);
+    }
+
+public:
     Creature(const char *type) : type(type)
     {
+        Creature::count++;
         chars = (char *)malloc(10);
     }
 
     Creature(const Creature &other)
     {
+        Creature::count++;
         printf("copy constructor\n");
         chars = (char *)malloc(10);
         setChars(other.chars);
@@ -25,6 +34,7 @@ public:
 
     ~Creature()
     {
+        Creature::count--;
         printf("~Creature\n");
     }
 
@@ -62,3 +72,5 @@ void Creature::setChars(const char *content)
 {
     strncpy(chars, content, 10);
 }
+
+int Creature::count = 0;
