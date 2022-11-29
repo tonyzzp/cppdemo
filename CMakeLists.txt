@@ -35,3 +35,9 @@ add_executable(
     demo_class
     class/demo_class.cpp
 )
+
+#demo_friend
+add_executable(
+    demo_friend
+    friend/demo_friend.cpp
+)
