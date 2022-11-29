@@ -28,3 +28,10 @@ add_executable(
     demo_io
     io/demo_io.cpp
 )
+
+
+# demo_class
+add_executable(
+    demo_class
+    class/demo_class.cpp
+)
