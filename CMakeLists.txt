@@ -60,3 +60,9 @@ add_executable(
     demo_exception
     exception/demo_exception.cpp
 )
+
+#demo_newdelete
+add_executable(
+    demo_newdelete
+    newdelete/demo_newdelete.cpp
+)
