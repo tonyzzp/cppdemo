@@ -72,3 +72,9 @@ add_executable(
     demo_namespace
     namespace/demo_namespace.cpp
 )
+
+#demo_template
+add_executable(
+    demo_template
+    template/demo_template.cpp
+)
