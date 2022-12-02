@@ -1,10 +1,11 @@
 project(cppdemo)
 cmake_minimum_required(VERSION 3.16)
 
-# add_definitions(-Wno-write-strings)
 
 if(MSVC)
     add_definitions(/utf-8)
+    add_definitions(-Wno-deprecated-declarations)
+    add_definitions(-Wno-write-strings)
 endif()
 
 include_directories(
@@ -83,4 +84,10 @@ add_executable(
 add_executable(
     demo_define
     define/demo_define.cpp
+)
+
+#demo_signal
+add_executable(
+    demo_signal
+    signal/demo_signal.cpp
 )
