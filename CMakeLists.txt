@@ -53,3 +53,10 @@ add_executable(
     demo_operator
     operator/demo_operator.cpp
 )
+
+
+#demo_exception
+add_executable(
+    demo_exception
+    exception/demo_exception.cpp
+)
