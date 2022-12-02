@@ -91,3 +91,9 @@ add_executable(
     demo_signal
     signal/demo_signal.cpp
 )
+
+#demo_thread
+add_executable(
+    demo_thread
+    thread/demo_thread.cpp
+)
