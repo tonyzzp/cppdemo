@@ -66,3 +66,9 @@ add_executable(
     demo_newdelete
     newdelete/demo_newdelete.cpp
 )
+
+#demo_namespace
+add_executable(
+    demo_namespace
+    namespace/demo_namespace.cpp
+)
