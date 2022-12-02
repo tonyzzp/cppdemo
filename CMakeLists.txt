@@ -41,3 +41,15 @@ add_executable(
     demo_friend
     friend/demo_friend.cpp
 )
+
+#demo_extend
+add_executable(
+    demo_extend
+    extend/demo_extend.cpp
+)
+
+#demo_operator
+add_executable(
+    demo_operator
+    operator/demo_operator.cpp
+)
