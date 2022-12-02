@@ -78,3 +78,9 @@ add_executable(
     demo_template
     template/demo_template.cpp
 )
+
+#demo_define
+add_executable(
+    demo_define
+    define/demo_define.cpp
+)
