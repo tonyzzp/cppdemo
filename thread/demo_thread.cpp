@@ -12,7 +12,7 @@ int main()
         for (int i = 0; i < 10; i++)
         {
             std::cout << "fun1:" << i << std::endl;
-            _sleep(500);
+            std::this_thread::sleep_for(std::chrono::milliseconds(500));
         }
         std::cout << "fun1.end" << std::endl;
     };
@@ -27,7 +27,7 @@ int main()
         for (int i = 0; i < 10; i++)
         {
             std::cout << "fun2:" << i << std::endl;
-            _sleep(500);
+            std::this_thread::sleep_for(std::chrono::milliseconds(500));
         }
         std::cout << "fun2.end" << std::endl;
         return NULL;

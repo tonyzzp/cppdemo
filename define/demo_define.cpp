@@ -31,10 +31,12 @@ int main()
     cout << "__DATE__ " << __DATE__ << endl;
     cout << "__TIME__" << __TIME__ << endl;
     cout << "__TIMESTAMP__ " << __TIMESTAMP__ << endl;
+#ifdef __WIN32__
     cout << "__WIN32__ " << __WIN32__ << endl;
     cout << "__WIN32 " << __WIN32 << endl;
     cout << "__WIN64 " << __WIN64 << endl;
     cout << "__WIN64__ " << __WIN64__ << endl;
+#endif
 
     return 0;
 }

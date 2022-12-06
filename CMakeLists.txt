@@ -98,6 +98,11 @@ add_executable(
     thread/demo_thread.cpp
 )
 
+target_link_libraries(
+    demo_thread
+    pthread
+)
+
 #demo_stl
 add_executable(
     demo_stl

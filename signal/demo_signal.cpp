@@ -1,6 +1,7 @@
 #include <iostream>
 #include <signal.h>
 #include <stdlib.h>
+#include <thread>
 
 int main()
 {
@@ -24,12 +25,12 @@ int main()
     while (true)
     {
         printf("%d\n", ++i);
-        _sleep(1000);
+        std::this_thread::sleep_for(std::chrono::seconds(1));
         if (i == 3)
         {
             raise(SIGTERM);
         }
     }
-    
+
     return 0;
 }
