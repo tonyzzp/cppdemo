@@ -97,3 +97,9 @@ add_executable(
     demo_thread
     thread/demo_thread.cpp
 )
+
+#demo_stl
+add_executable(
+    demo_stl
+    stl/demo_stl.cpp
+)
