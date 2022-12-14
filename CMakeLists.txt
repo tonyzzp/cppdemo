@@ -1,11 +1,16 @@
 project(cppdemo)
 cmake_minimum_required(VERSION 3.16)
+set(CMAKE_CXX_STANDARD 17)
 
 
 if(MSVC)
     add_definitions(/utf-8)
     add_definitions(-Wno-deprecated-declarations)
     add_definitions(-Wno-write-strings)
+endif()
+
+if(WIN32)
+    set(CMAKE_CXX_FLAGS -fexec-charset=gbk)
 endif()
 
 include_directories(
@@ -107,4 +112,10 @@ target_link_libraries(
 add_executable(
     demo_stl
     stl/demo_stl.cpp
+)
+
+#demo_fs
+add_executable(
+    demo_fs
+    fs/demo_fs.cpp
 )
