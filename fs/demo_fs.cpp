@@ -41,10 +41,11 @@ int main()
     std::cout << "is_relative:" << root.is_relative() << "\n";
     std::cout << "is_absolute:" << root.is_absolute() << "\n";
     std::cout << "isDirectory:" << fs::is_directory(root) << "\n";
+    std::cout << "lexically_normal:" << root.lexically_normal() << "\n";
 
     {
         auto dir = root.parent_path();
-        std::cout << "----------遍历build:" << dir << "\n";
+        std::cout << "-------------------- 遍历build:" << dir << "\n";
         for (auto it = fs::directory_iterator(dir); it != fs::end(it); it++)
         {
             auto entry = *it;
@@ -54,11 +55,46 @@ int main()
 
     {
         auto dir = root.parent_path();
-        std::cout << "----------resursive遍历build:" << dir << "\n";
+        std::cout << "-------------------- resursive遍历build:" << dir << "\n";
         for (auto it = fs::recursive_directory_iterator(dir); it != fs::end(it); it++)
         {
             std::cout << (*it).path() << "\n";
         }
+    }
+
+    {
+        auto a = fs::path("e:/mybin");
+        auto b = fs::path("e:\\mybin");
+        auto c = fs::path("E:/mybin/");
+        auto d = fs::path("e:/mybin/");
+        auto e = fs::path("E:/mybin");
+
+#define COMPARE(a, b) std::cout << a << "==" << b << ": " << (a == b) << "\n"
+
+#define LEXICALLY(a) std::cout << "lexically " << a << " : " << a.lexically_normal() << "\n"
+
+        std::cout << "比较是否相等\n";
+        COMPARE(a, b);
+        COMPARE(a, c);
+        COMPARE(a, d);
+        COMPARE(a, e);
+
+        COMPARE(b, c);
+        COMPARE(b, d);
+        COMPARE(a, e);
+
+        COMPARE(c, d);
+        COMPARE(c, e);
+
+        COMPARE(d, e);
+
+        std::cout << "---------- lexically_normal\n";
+        LEXICALLY(a);
+        LEXICALLY(b);
+        LEXICALLY(c);
+        LEXICALLY(d);
+        LEXICALLY(e);
+        LEXICALLY(fs::path("a/b/c/../../e/f"));
     }
 
     return 0;
