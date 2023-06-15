@@ -2,6 +2,8 @@
 #include <list>
 #include <iostream>
 #include <string>
+#include <map>
+#include <unordered_map>
 
 int main()
 {
@@ -43,6 +45,27 @@ int main()
         for (int i = 0; i < v.size(); i++)
         {
             std::cout << data[i] << "\n";
+        }
+    }
+
+    {
+
+        std::cout << "map\n";
+        std::map<std::string, int> m;
+        m["b"] = 2;
+        m["a"] = 1;
+        m["z"] = 10;
+        for (auto it = m.begin(); it != m.end(); it++)
+        {
+            std::cout << it->first << " , " << it->second << "\n";
+        }
+
+        std::cout << "unordered_map\n";
+        std::unordered_map<std::string, int> m2(m.begin(), m.end());
+        m2["c"] = 3;
+        for (auto it = m2.begin(); it != m2.end(); it++)
+        {
+            std::cout << it->first << " , " << it->second << "\n";
         }
     }
 
